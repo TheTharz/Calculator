@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" id="display">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="allClear()">
+                    <input type="button" value="DE" onclick="deleteElement()">
+                    <input type="button" value=".">
+                    <input type="button" value="/">
+                </div>
+
+                <div>
+                    <input type="button" value="7" onclick= "inputElement('7')">
+                    <input type="button" value="8" onclick="inputElement('8')">
+                    <input type="button" value="9" onclick="inputElement('9')">
+                    <input type="button" value="-">
+                </div>
+
+                <div>
+                    <input type="button" value="4" onclick="inputElement('4')">
+                    <input type="button" value="5" onclick="inputElement('5')">
+                    <input type="button" value="6" onclick="inputElement('6')">
+                    <input type="button" value="+">
+                </div>
+
+                <div>
+                    <input type="button" value="1" onclick="inputElement('1')">
+                    <input type="button" value="2" onclick="inputElement('2')">
+                    <input type="button" value="3" onclick="inputElement('3')">
+                    <input type="button" value="*">
+                </div>
+
+                <div>
+                    <input type="button" value="00" onclick="inputElement('00')">
+                    <input type="button" value="0" onclick="inputElement('0')">
+                    <input type="button" value="=">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function inputElement(value){
+            document.getElementById("display").value += value;
+        }
+        function allClear(){
+            document.getElementById("display").value = null;
+        }
+        function deleteElement(){
+            var element = document.getElementById("display").value;
+            var afterSlice = element.slice(0, -1);
+            document.getElementById("display").value = afterSlice;
+        }
+        function calculate(){
+            var finVal = document.getElementById("display").value;
+
+        }
+    </script>
+</body>
+</html>
